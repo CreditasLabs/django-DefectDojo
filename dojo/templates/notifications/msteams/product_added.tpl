@@ -3,8 +3,8 @@
 {
     "@context": "https://schema.org/extensions",
     "@type": "MessageCard",
-    "title": "{% trans "Product Added" %}",
-    "summary": "{% trans "Product Added" %}",
+    "title": "{% trans "Repo Added" %}",
+    "summary": "{% trans "Repo Added" %}",
     "sections": [
         {
             "activityTitle": "DefectDojo",
@@ -12,7 +12,7 @@
             "text": "{% trans "A new product has been added" %}.",
             "facts": [
                 {
-                    "name": "{% trans "Product" %}:",
+                    "name": "{% trans "Repo" %}:",
                     "value": "{{ title }}"
                 }
             ]
@@ -27,7 +27,7 @@
     "potentialAction": [
         {
             "@type": "OpenUri",
-            "name": "{% trans "View Product" %}",
+            "name": "{% trans "View Repo" %}",
             "targets": [
                 {
                     "os": "default",

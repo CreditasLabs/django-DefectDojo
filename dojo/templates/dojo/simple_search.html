@@ -51,7 +51,7 @@
             {% endif %}
             {% if products %}
                 <li role="presentation" {% if activetab == 'products' %}class="active"{% endif %}>
-                    <a href="#tabs-3" role="tab" data-toggle="tab">{% trans "Products" %} ({{ products|length }})</a>
+                    <a href="#tabs-3" role="tab" data-toggle="tab">{% trans "Repos" %} ({{ products|length }})</a>
                 </li>
             {% endif %}
             {% if engagements %}
@@ -113,7 +113,7 @@
                         <tr>
                             <th>{% trans "Vulnerability Id" %}</th>
                             <th>{% trans "EPSS Score / Percentile" %}</th>
-                            <th>{% trans "Product" %}</th>
+                            <th>{% trans "Repo" %}</th>
                             <th>{% trans "Engagement" %}</th>
                             <th>{% trans "Test" %}</th>
                             <th>{% trans "Finding" %}</th>
@@ -191,7 +191,7 @@
                         <thead>
                         <tr>
                             <th>{% trans "Type" %}</th>
-                            <th>{% trans "Product" %}</th>
+                            <th>{% trans "Repo" %}</th>
                             <th>{% trans "Date" %}</th>
                             <th>{% trans "Status" %}</th>
                         </tr>
@@ -224,7 +224,7 @@
                         <thead>
                         <tr>
                             <th>{% trans "Title" %}</th>
-                            <th>{% trans "Product" %}</th>
+                            <th>{% trans "Repo" %}</th>
                             <th>{% trans "Engagement" %}</th>
                             <th>{% trans "Date" %}</th>
                             <th>{% trans "Status" %}</th>
@@ -262,7 +262,7 @@
                         <thead>
                         <tr>
                             <th>{% trans "Endpoint" %}</th>
-                            <th>{% trans "Product" %}</th>
+                            <th>{% trans "Repo" %}</th>
                             <th>{% trans "Open Findings" %}</th>
                         </tr>
                         </thead>
@@ -325,7 +325,7 @@
                         <thead>
                         <tr>
                             <th>{% trans "Language" %}</th>
-                            <th>{% trans "Product" %}</th>
+                            <th>{% trans "Repo" %}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -350,7 +350,7 @@
                         <thead>
                         <tr>
                             <th>{% trans "Technology" %}</th>
-                            <th>{% trans "Product" %}</th>
+                            <th>{% trans "Repo" %}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -409,7 +409,7 @@
                         {% endfor %}
                         {% for product in tagged_products %}
                             <tr>
-                                <td>{% trans "Product" %}</td>
+                                <td>{% trans "Repo" %}</td>
                                 <td>
                                     <a class="search-finding" href="{% url 'view_product' product.id %}">{{ product.name }}</a>
                                     {% include "dojo/snippets/tags.html" with tags=product.tags.all %}
@@ -446,7 +446,7 @@
                         <tr>
                             <th>{% trans "ID" %}</th>
                             <th>{% trans "Type" %}</th>
-                            <th>{% trans "Product" %}</th>
+                            <th>{% trans "Repo" %}</th>
                             <th>{% trans "Severity" %}</th>
                             <th>{% trans "Title" %}</th>
                             <th>{% trans "Description" %}</th>

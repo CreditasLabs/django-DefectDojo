@@ -6,7 +6,7 @@
 {% endblock add_css %}
 {% block content %}
     {{ block.super }}
-    {% if product_tab.tab == "engagements" and destination_label == "Product" %}
+    {% if product_tab.tab == "engagements" and destination_label == "Repo" %}
         <h3> Copy {{ source }} in {{ product_tab.product }}</h3>
     {% else %}
         <h3> Copy {{ source }} to a new {{ destination_label }}</h3>

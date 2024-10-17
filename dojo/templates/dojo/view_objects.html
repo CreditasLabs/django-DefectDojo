@@ -14,8 +14,8 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="clearfix">
-                <h3 class="pull-left">Tracked Product Files, Paths and Artifacts</h3>
-                {% if product|has_object_permission:"Product_Tracking_Files_Add" %}
+                <h3 class="pull-left">Tracked Repo Files, Paths and Artifacts</h3>
+                {% if product|has_object_permission:"Repo_Tracking_Files_Add" %}
                 <div id="test-pulldown" class="dropdown pull-right">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1"
                             data-toggle="dropdown" aria-expanded="true">
@@ -52,11 +52,11 @@
                     <td>{{ object.review_status }}</td>
                     <td>
                        <div class="btn-group">
-                        {% if product|has_object_permission:"Product_Tracking_Files_Edit" %}
+                        {% if product|has_object_permission:"Repo_Tracking_Files_Edit" %}
                            <a class="btn btn-sm btn-warning"
                               href="{% url 'edit_object' object.product.id object.id %}">Edit</a>
                         {% endif %}
-                        {% if product|has_object_permission:"Product_Tracking_Files_Delete" %}
+                        {% if product|has_object_permission:"Repo_Tracking_Files_Delete" %}
                            <a class="btn btn-sm btn-danger"
                               href="{% url 'delete_object' object.product.id object.id %}">Delete</a>
                         {% endif %}

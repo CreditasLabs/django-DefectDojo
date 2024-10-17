@@ -3,8 +3,8 @@
 {
     "@context": "https://schema.org/extensions",
     "@type": "MessageCard",
-    "title": "{% trans "Product Type Added" %}",
-    "summary": "{% trans "Product Type Added" %}",
+    "title": "{% trans "Tribe Added" %}",
+    "summary": "{% trans "Tribe Added" %}",
     "sections": [
         {
             "activityTitle": "DefectDojo",
@@ -12,7 +12,7 @@
             "text": "{% trans "A new product type has been added" %}.",
             "facts": [
                 {
-                    "name": "{% trans "Product Type" %}:",
+                    "name": "{% trans "Tribe" %}:",
                     "value": "{{ title }}"
                 }
             ]
@@ -27,7 +27,7 @@
     "potentialAction": [
         {
             "@type": "OpenUri",
-            "name": "{% trans "View Product Type" %}",
+            "name": "{% trans "View Tribe" %}",
             "targets": [
                 {
                     "os": "default",

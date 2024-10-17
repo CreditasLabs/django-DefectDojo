@@ -115,7 +115,7 @@
                                     <h4 class="pull-left">
                                         Engagement Presets <small>{{ eng.preset.title|truncatechars_html:60 }}</small>
                                     </h4>
-                                    {% if eng.product|has_object_permission:"Product_Edit" %}
+                                    {% if eng.product|has_object_permission:"Repo_Edit" %}
                                         <div class="dropdown pull-right">
                                             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1"
                                                 data-toggle="dropdown" aria-expanded="true">
@@ -319,7 +319,7 @@
                                             <td><a title="{{ test.description }}" href="{% url 'view_test' test.id %}">{{ test }}</a>
                                                 {% if test.version %}
                                                     <sup>
-                                                    <a target="_blank" class="tag-label tag-version" data-toggle="tooltip" data-placement="bottom" title="Product Version: {{ test.version }}">
+                                                    <a target="_blank" class="tag-label tag-version" data-toggle="tooltip" data-placement="bottom" title="Repo Version: {{ test.version }}">
                                                     {{ test.version }}</a>
                                                     </sup>
                                                 {% endif %}
@@ -725,7 +725,7 @@
                         {% endif %}
                         {% if eng.version %}
                             <sup>
-                            <a target="_blank" class="tag-label tag-version" data-toggle="tooltip" data-placement="bottom" title="Product Version: {{ eng.version }}">
+                            <a target="_blank" class="tag-label tag-version" data-toggle="tooltip" data-placement="bottom" title="Repo Version: {{ eng.version }}">
                             {{ eng.version }}</a>
                             </sup>
                         {% endif %}
@@ -989,9 +989,9 @@
                                         <td colspan="3">
                                             <small class="text-muted"><em>
                                                 {% if creds %}
-                                                    Credentials Configured for this <strong>Product</strong>
+                                                    Credentials Configured for this <strong>Repo</strong>
                                                 {% else %}
-                                                    No Credentials Configured for this <strong>Product</strong>
+                                                    No Credentials Configured for this <strong>Repo</strong>
                                                 {% endif %}
                                             </em></small>
                                         </td>

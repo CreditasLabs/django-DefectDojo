@@ -116,21 +116,21 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="clearfix">
-                    <h4 class="pull-left">Product Types this Group can access</h4>
+                    <h4 class="pull-left">Tribes this Group can access</h4>
                     &nbsp;
                     <a href="https://documentation.defectdojo.com/usage/permissions/" target="_blank">
                         <i class="fa-solid fa-circle-question"></i></a>
                     {% if request.user.is_superuser %}
                     <div class="dropdown pull-right">
-                        <button class="btn btn-primary dropdown-toggle" aria-label="Actions" type="button" id="dropdownMenuAddProductTypeGroup"
+                        <button class="btn btn-primary dropdown-toggle" aria-label="Actions" type="button" id="dropdownMenuAddRepoTypeGroup"
                                 data-toggle="dropdown" aria-expanded="true">
                             <span class="fa-solid fa-bars"></span>
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu2">
                             <li role="presentation">
-                                <a id="addProductTypeGroup" href="{% url 'add_product_type_group_group' group.id %}">
-                                    <i class="fa-solid fa-plus"></i> Add Product Types
+                                <a id="addRepoTypeGroup" href="{% url 'add_product_type_group_group' group.id %}">
+                                    <i class="fa-solid fa-plus"></i> Add Tribes
                                 </a>
                             </li>
                         </ul>
@@ -144,7 +144,7 @@
                     <thead>
                     <tr>
                         <th></th>
-                        <th>Product Type</th>
+                        <th>Tribe</th>
                         <th>Role</th>
                     </tr>
                     </thead>
@@ -154,18 +154,18 @@
                         <td>
                             <ul>
                                 <li class="dropdown" style="list-style:none;position:absolute">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" name="dropdownManageProductTypeGroup"
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" name="dropdownManageRepoTypeGroup"
                                        aria-expanded="true">&nbsp;<b class="fa-solid fa-ellipsis-vertical"></b>&nbsp;</a>
                                     <ul class="dropdown-menu">
-                                        {% if product_type_group.product_type|has_object_permission:"Product_Type_Group_Edit" %}
+                                        {% if product_type_group.product_type|has_object_permission:"Repo_Type_Group_Edit" %}
                                         <li>
-                                            <a name="editProductTypeGroup" href="{% url 'edit_product_type_group' product_type_group.id %}">
+                                            <a name="editRepoTypeGroup" href="{% url 'edit_product_type_group' product_type_group.id %}">
                                                 <i class="fa-solid fa-pen-to-square"></i> Edit</a>
                                         </li>
                                         {% endif %}
-                                        {% if product_type_group|has_object_permission:"Product_Type_Group_Delete" %}
+                                        {% if product_type_group|has_object_permission:"Repo_Type_Group_Delete" %}
                                         <li>
-                                            <a name="deleteProductTypeGroup" href="{% url 'delete_product_type_group' product_type_group.id %}">
+                                            <a name="deleteRepoTypeGroup" href="{% url 'delete_product_type_group' product_type_group.id %}">
                                                 <i class="fa-solid fa-trash"></i> Delete</a>
                                         </li>
                                         {% endif %}
@@ -182,7 +182,7 @@
             </div>
             {% else %}
             <div class="panel-body">
-                <small class="text-muted"><em>This Group cannot access any Product Types.</em></small>
+                <small class="text-muted"><em>This Group cannot access any Tribes.</em></small>
             </div>
             {% endif %}
         </div>
@@ -190,21 +190,21 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="clearfix">
-                    <h4 class="pull-left">Products this Group can access</h4>
+                    <h4 class="pull-left">Repos this Group can access</h4>
                     &nbsp;
                     <a href="https://documentation.defectdojo.com/usage/permissions/" target="_blank">
                         <i class="fa-solid fa-circle-question"></i></a>
                     {% if request.user.is_superuser %}
                     <div class="dropdown pull-right">
-                        <button class="btn btn-primary dropdown-toggle" aria-label="Actions" type="button"  id="dropdownMenuAddProductGroup"
+                        <button class="btn btn-primary dropdown-toggle" aria-label="Actions" type="button"  id="dropdownMenuAddRepoGroup"
                                 data-toggle="dropdown" aria-expanded="true">
                             <span class="fa-solid fa-bars"></span>
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu3">
                             <li role="presentation">
-                                <a id="addProductGroup" href="{% url 'add_product_group_group' group.id %}">
-                                    <i class="fa-solid fa-plus"></i> Add Products
+                                <a id="addRepoGroup" href="{% url 'add_product_group_group' group.id %}">
+                                    <i class="fa-solid fa-plus"></i> Add Repos
                                 </a>
                             </li>
                         </ul>
@@ -218,7 +218,7 @@
                     <thead>
                     <tr>
                         <th></th>
-                        <th>Product</th>
+                        <th>Repo</th>
                         <th>Role</th>
                     </tr>
                     </thead>
@@ -228,18 +228,18 @@
                         <td>
                             <ul>
                                 <li class="dropdown" style="list-style:none;position:absolute">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" name="dropdownManageProductGroup"
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" name="dropdownManageRepoGroup"
                                        aria-expanded="true">&nbsp;<b class="fa-solid fa-ellipsis-vertical"></b>&nbsp;</a>
                                     <ul class="dropdown-menu">
-                                        {% if product_group.product|has_object_permission:"Product_Group_Edit" %}
+                                        {% if product_group.product|has_object_permission:"Repo_Group_Edit" %}
                                         <li>
-                                            <a name="editProductGroup" href="{% url 'edit_product_group' product_group.id %}">
+                                            <a name="editRepoGroup" href="{% url 'edit_product_group' product_group.id %}">
                                                 <i class="fa-solid fa-pen-to-square"></i> Edit</a>
                                         </li>
                                         {% endif %}
-                                        {% if product_group|has_object_permission:"Product_Group_Delete" %}
+                                        {% if product_group|has_object_permission:"Repo_Group_Delete" %}
                                         <li>
-                                            <a name="deleteProductGroup" href="{% url 'delete_product_group' product_group.id %}">
+                                            <a name="deleteRepoGroup" href="{% url 'delete_product_group' product_group.id %}">
                                                 <i class="fa-solid fa-trash"></i> Delete</a>
                                         </li>
                                         {% endif %}
@@ -256,7 +256,7 @@
             </div>
             {% else %}
             <div class="panel-body">
-                <small class="text-muted"><em>This Group cannot access any Products.</em></small>
+                <small class="text-muted"><em>This Group cannot access any Repos.</em></small>
             </div>
             {% endif %}
         </div>
@@ -279,13 +279,13 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 200px;"><strong>Number of Product Types</strong></td>
+                                <td style="width: 200px;"><strong>Number of Tribes</strong></td>
                                 <td>
                                     {{ product_types|length }}
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 200px;"><strong>Number of Products</strong></td>
+                                <td style="width: 200px;"><strong>Number of Repos</strong></td>
                                 <td>
                                     {{ products|length }}
                                 </td>

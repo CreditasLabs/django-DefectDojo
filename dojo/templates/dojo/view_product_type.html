@@ -5,7 +5,7 @@
 
 {% block content %}
     {{ block.super }}
-    <h3 id="id_heading"> Product Type {{ pt.name }}</h3>
+    <h3 id="id_heading"> Tribe {{ pt.name }}</h3>
     <div class="row">
         <div id="tests" class="col-md-8">
             <div class="panel panel-default">
@@ -19,7 +19,7 @@
                                       <span class="caret"></span>
                                   </button>
                         <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
-                            {% if pt|has_object_permission:"Product_Type_Edit" %}
+                            {% if pt|has_object_permission:"Repo_Type_Edit" %}
                             <li>
                                 <a class="" href="{% url 'edit_product_type' pt.id %}">
                                 <i class="fa-solid fa-pen-to-square"></i> {% trans "Edit" %}</a>
@@ -32,9 +32,9 @@
                             </li>
                             <li>
                                 <a class="" href="{% url 'product_type_report' pt.id %}">
-                                <i class="fa-solid fa-file-lines"></i> {% trans "Product Type Report" %} </a>
+                                <i class="fa-solid fa-file-lines"></i> {% trans "Tribe Report" %} </a>
                             </li>
-                            {% if pt|has_object_permission:"Product_Type_Delete" %}
+                            {% if pt|has_object_permission:"Repo_Type_Delete" %}
                             <li role="separator" class="divider"></li>
                             <li>
                                 <a class="" href="{% url 'delete_product_type' pt.id %}">
@@ -53,8 +53,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="clearfix">
-                        <h4 class="pull-left">{% trans "Products" %}</h4>
-                        {% if pt|has_object_permission:"Product_Type_Add_Product" %}
+                        <h4 class="pull-left">{% trans "Repos" %}</h4>
+                        {% if pt|has_object_permission:"Repo_Type_Add_Repo" %}
                         <div class="dropdown pull-right">
                             <div class="btn-group">
                                 <button class="btn btn-primary dropdown-toggle" type="button" label="Actions" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
@@ -64,7 +64,7 @@
                                 <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
                                     <li>
                                         <a class="" href="{% url 'add_product_to_product_type' pt.id %}">
-                                        <i class="fa-solid fa-plus"></i> {% trans "Add Product" %}</a>
+                                        <i class="fa-solid fa-plus"></i> {% trans "Add Repo" %}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -133,16 +133,16 @@
                             &nbsp;
                             <a href="https://documentation.defectdojo.com/usage/permissions/" target="_blank">
                                 <i class="fa-solid fa-circle-question"></i></a>
-                            {% if pt|has_object_permission:"Product_Type_Manage_Members" %}
+                            {% if pt|has_object_permission:"Repo_Type_Manage_Members" %}
                             <div class="dropdown pull-right">
-                                <button class="btn btn-primary dropdown-toggle" label="Actions" type="button" id="dropdownMenuAddProductTypeMember"
-                                        data-toggle="dropdown" aria-expanded="true" aria-label="{% trans "Add Product Type Member" %}">
+                                <button class="btn btn-primary dropdown-toggle" label="Actions" type="button" id="dropdownMenuAddRepoTypeMember"
+                                        data-toggle="dropdown" aria-expanded="true" aria-label="{% trans "Add Tribe Member" %}">
                                     <span class="fa-solid fa-bars"></span>
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
                                     <li role="presentation">
-                                        <a id="addProductTypeMember" href="{% url 'add_product_type_member' pt.id %}">
+                                        <a id="addRepoTypeMember" href="{% url 'add_product_type_member' pt.id %}">
                                             <i class="fa-solid fa-plus"></i> {% trans "Add Users" %}
                                         </a>
                                     </li>
@@ -167,17 +167,17 @@
                                         <td>
                                             <ul>
                                             <li class="dropdown" style="list-style:none;position:absolute">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" name="dropdownManageProductTypeMember">&nbsp;<b class="fa-solid fa-ellipsis-vertical"></b>&nbsp;</a>
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" name="dropdownManageRepoTypeMember">&nbsp;<b class="fa-solid fa-ellipsis-vertical"></b>&nbsp;</a>
                                                 <ul class="dropdown-menu">
-                                                    {% if pt|has_object_permission:"Product_Type_Manage_Members" %}
+                                                    {% if pt|has_object_permission:"Repo_Type_Manage_Members" %}
                                                     <li>
-                                                        <a name="editProductTypeMember" href="{% url 'edit_product_type_member' member.id %}">
+                                                        <a name="editRepoTypeMember" href="{% url 'edit_product_type_member' member.id %}">
                                                         <i class="fa-solid fa-pen-to-square"></i> {% trans "Edit" %}</a>
                                                     </li>
                                                     {% endif %}
-                                                    {% if member|has_object_permission:"Product_Type_Member_Delete" %}
+                                                    {% if member|has_object_permission:"Repo_Type_Member_Delete" %}
                                                     <li>
-                                                        <a name="deleteProductTypeMember" href="{% url 'delete_product_type_member' member.id %}">
+                                                        <a name="deleteRepoTypeMember" href="{% url 'delete_product_type_member' member.id %}">
                                                         <i class="fa-solid fa-trash"></i> {% trans "Delete" %}</a>
                                                     </li>
                                                     {% endif %}
@@ -214,16 +214,16 @@
                         &nbsp;
                         <a href="https://documentation.defectdojo.com/usage/permissions/" target="_blank">
                             <i class="fa-solid fa-circle-question"></i></a>
-                        {% if pt|has_object_permission:"Product_Type_Group_Add" %}
+                        {% if pt|has_object_permission:"Repo_Type_Group_Add" %}
                         <div class="dropdown pull-right">
-                            <button class="btn btn-primary dropdown-toggle" label="Actions" type="button" id="dropdownMenuAddProductTypeGroup"
-                                    data-toggle="dropdown" aria-expanded="true" aria-label="{% trans "Add Product Type Group" %}">
+                            <button class="btn btn-primary dropdown-toggle" label="Actions" type="button" id="dropdownMenuAddRepoTypeGroup"
+                                    data-toggle="dropdown" aria-expanded="true" aria-label="{% trans "Add Tribe Group" %}">
                                 <span class="fa-solid fa-bars"></span>
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
                                 <li role="presentation">
-                                    <a id="addProductTypeGroup" href="{% url 'add_product_type_group' pt.id %}">
+                                    <a id="addRepoTypeGroup" href="{% url 'add_product_type_group' pt.id %}">
                                         <i class="fa-solid fa-plus"></i> {% trans "Add Groups" %}
                                     </a>
                                 </li>
@@ -248,17 +248,17 @@
                             <td>
                                 <ul>
                                     <li class="dropdown" style="list-style:none;position:absolute">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" name="dropdownManageProductTypeGroup">&nbsp;<b class="fa-solid fa-ellipsis-vertical"></b>&nbsp;</a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" name="dropdownManageRepoTypeGroup">&nbsp;<b class="fa-solid fa-ellipsis-vertical"></b>&nbsp;</a>
                                         <ul class="dropdown-menu">
-                                            {% if pt|has_object_permission:"Product_Type_Group_Edit" %}
+                                            {% if pt|has_object_permission:"Repo_Type_Group_Edit" %}
                                             <li>
-                                                <a name="editProductTypeGroup" href="{% url 'edit_product_type_group' group.id %}">
+                                                <a name="editRepoTypeGroup" href="{% url 'edit_product_type_group' group.id %}">
                                                     <i class="fa-solid fa-pen-to-square"></i> {% trans "Edit" %}</a>
                                             </li>
                                             {% endif %}
-                                            {% if pt|has_object_permission:"Product_Type_Group_Delete" %}
+                                            {% if pt|has_object_permission:"Repo_Type_Group_Delete" %}
                                             <li>
-                                                <a name="deleteProductTypeGroup" href="{% url 'delete_product_type_group' group.id %}">
+                                                <a name="deleteRepoTypeGroup" href="{% url 'delete_product_type_group' group.id %}">
                                                     <i class="fa-solid fa-trash"></i> {% trans "Delete" %}</a>
                                             </li>
                                             {% endif %}

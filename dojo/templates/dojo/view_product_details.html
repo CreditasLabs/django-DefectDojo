@@ -23,7 +23,7 @@
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
-                {% if prod|has_object_permission:"Product_Edit" %}
+                {% if prod|has_object_permission:"Repo_Edit" %}
                   <li role="presentation">
                     <a class="" href="{% url 'edit_product' prod.id %}">
                                           <i class="fa-solid fa-pen-to-square"></i> {% trans "Edit" %}
@@ -43,7 +43,7 @@
                   </li>
                 {% endif %}
                 <li role="separator" class="divider"></li>
-                {% if prod|has_object_permission:"Product_API_Scan_Configuration_Add" %}
+                {% if prod|has_object_permission:"Repo_API_Scan_Configuration_Add" %}
                   <li role="presentation">
                     <a class="" href="{% url 'add_api_scan_configuration' prod.id %}">
                       <i class="fa-solid fa-plus"></i>{% trans "Add API Scan Configuration" %}
@@ -58,17 +58,17 @@
                 </li>
                 {% if system_settings.enable_product_tracking_files %}
                   <li role="separator" class="divider"></li>
-                  {% if prod|has_object_permission:"Product_Tracking_Files_Add" %}
+                  {% if prod|has_object_permission:"Repo_Tracking_Files_Add" %}
                   <li role="presentation">
                     <a class="" href="{% url 'new_object' prod.id %}">
-                        <i class="fa-solid fa-plus"></i>{% trans "Add Product Tracking Files" %}
+                        <i class="fa-solid fa-plus"></i>{% trans "Add Repo Tracking Files" %}
                     </a>
                   </li>
                   {% endif %}
-                  {% if prod|has_object_permission:"Product_Tracking_Files_View" %}
+                  {% if prod|has_object_permission:"Repo_Tracking_Files_View" %}
                   <li role="presentation">
                     <a href="{% url 'view_objects' prod.id %}">
-                        <i class="fa-solid fa-rectangle-list"></i>{% trans "View Product Tracking Files" %}
+                        <i class="fa-solid fa-rectangle-list"></i>{% trans "View Repo Tracking Files" %}
                     </a>
                   </li>
                   {% endif %}
@@ -76,7 +76,7 @@
                 <li role="separator" class="divider"></li>
                 <li role="presentation">
                   <a href="{% url 'product_report' prod.id %}?title=&active=1&verified=1&false_p=2&duplicate=2">
-                      <i class="fa-solid fa-file-lines"></i>{% trans "Product Report" %}
+                      <i class="fa-solid fa-file-lines"></i>{% trans "Repo Report" %}
                   </a>
                 </li>
                 {% if prod|has_object_permission:"Benchmark_Edit" %}
@@ -91,7 +91,7 @@
                     {% endfor %}
                   {% endif %}
                 {% endif %}
-                {% if prod|has_object_permission:"Product_Edit" %}
+                {% if prod|has_object_permission:"Repo_Edit" %}
                   <li role="separator" class="divider"></li>
                   <li role="presentation">
                     <a href="{% url 'action_history' prod|content_type prod.id %}">
@@ -99,7 +99,7 @@
                     </a>
                   </li>
                 {% endif %}
-                {% if prod|has_object_permission:"Product_Delete" %}
+                {% if prod|has_object_permission:"Repo_Delete" %}
                   <li role="separator" class="divider"></li>
                   <li role="presentation">
                     <a class="text-danger" href="{% url 'delete_product' prod.id %}">
@@ -279,16 +279,16 @@
                 &nbsp;
                 <a href="https://documentation.defectdojo.com/usage/permissions/" target="_blank">
                     <i class="fa-solid fa-circle-question"></i></a>
-                {% if prod|has_object_permission:"Product_Manage_Members" %}
+                {% if prod|has_object_permission:"Repo_Manage_Members" %}
                 <div class="dropdown pull-right">
-                    <button class="btn btn-primary dropdown-toggle" label="Actions" type="button" id="dropdownMenuAddProductMember"
-                            data-toggle="dropdown" aria-expanded="true" aria-label="Add Product Member">
+                    <button class="btn btn-primary dropdown-toggle" label="Actions" type="button" id="dropdownMenuAddRepoMember"
+                            data-toggle="dropdown" aria-expanded="true" aria-label="Add Repo Member">
                         <span class="fa-solid fa-bars"></span>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
                         <li role="presentation">
-                            <a id="addProductMember" href="{% url 'add_product_member' prod.id %}">
+                            <a id="addRepoMember" href="{% url 'add_product_member' prod.id %}">
                                 <i class="fa-solid fa-plus"></i>{% trans "Add Users" %}
                             </a>
                         </li>
@@ -314,17 +314,17 @@
                             <td>
                                 <ul>
                                 <li class="dropdown" style="list-style:none;position:absolute">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" label="Actions" name="dropdownManageProductMember">&nbsp;<b class="fa-solid fa-ellipsis-vertical"></b>&nbsp;</a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" label="Actions" name="dropdownManageRepoMember">&nbsp;<b class="fa-solid fa-ellipsis-vertical"></b>&nbsp;</a>
                                     <ul class="dropdown-menu">
-                                        {% if prod|has_object_permission:"Product_Manage_Members" %}
+                                        {% if prod|has_object_permission:"Repo_Manage_Members" %}
                                         <li>
-                                            <a name="editProductMember" href="{% url 'edit_product_member' member.id %}">
+                                            <a name="editRepoMember" href="{% url 'edit_product_member' member.id %}">
                                             <i class="fa-solid fa-pen-to-square"></i>{% trans "Edit" %}</a>
                                         </li>
                                         {% endif %}
-                                        {% if member|has_object_permission:"Product_Member_Delete" %}
+                                        {% if member|has_object_permission:"Repo_Member_Delete" %}
                                         <li>
-                                            <a name="deleteProductMember" href="{% url 'delete_product_member' member.id %}">
+                                            <a name="deleteRepoMember" href="{% url 'delete_product_member' member.id %}">
                                             <i class="fa-solid fa-trash"></i>{% trans "Delete" %}</a>
                                         </li>
                                         {% endif %}
@@ -333,7 +333,7 @@
                                 </ul>
                             </td>
                             <td name="member_user">{{ member.user.get_full_name }}</td>
-                            <td>{% trans "Product member" %}</td>
+                            <td>{% trans "Repo member" %}</td>
                             <td name="member_role">{{ member.role }}</td>
                         </tr>
                     {% endfor %}
@@ -376,16 +376,16 @@
                   &nbsp;
                   <a href="https://documentation.defectdojo.com/usage/permissions/" target="_blank">
                       <i class="fa-solid fa-circle-question"></i></a>
-                  {% if prod|has_object_permission:"Product_Group_Add" %}
+                  {% if prod|has_object_permission:"Repo_Group_Add" %}
                   <div class="dropdown pull-right">
-                      <button class="btn btn-primary dropdown-toggle" label="Actions" type="button" id="dropdownMenuAddProductGroup"
-                              data-toggle="dropdown" aria-expanded="true" aria-label="Add Product Group">
+                      <button class="btn btn-primary dropdown-toggle" label="Actions" type="button" id="dropdownMenuAddRepoGroup"
+                              data-toggle="dropdown" aria-expanded="true" aria-label="Add Repo Group">
                           <span class="fa-solid fa-bars"></span>
                           <span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
                           <li role="presentation">
-                              <a id="addProductGroup" href="{% url 'add_product_group' prod.id %}">
+                              <a id="addRepoGroup" href="{% url 'add_product_group' prod.id %}">
                                   <i class="fa-solid fa-plus"></i>{% trans "Add Groups" %}
                               </a>
                           </li>
@@ -411,17 +411,17 @@
                       <td>
                           <ul>
                               <li class="dropdown" style="list-style:none;position:absolute">
-                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" label="Actions" name="dropdownManageProductGroup">&nbsp;<b class="fa-solid fa-ellipsis-vertical"></b>&nbsp;</a>
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" label="Actions" name="dropdownManageRepoGroup">&nbsp;<b class="fa-solid fa-ellipsis-vertical"></b>&nbsp;</a>
                                   <ul class="dropdown-menu">
-                                      {% if prod|has_object_permission:"Product_Group_Edit" %}
+                                      {% if prod|has_object_permission:"Repo_Group_Edit" %}
                                       <li>
-                                          <a name="editProductGroup" href="{% url 'edit_product_group' group.id %}">
+                                          <a name="editRepoGroup" href="{% url 'edit_product_group' group.id %}">
                                               <i class="fa-solid fa-pen-to-square"></i>{% trans "Edit" %}</a>
                                       </li>
                                       {% endif %}
-                                      {% if group|has_object_permission:"Product_Group_Delete" %}
+                                      {% if group|has_object_permission:"Repo_Group_Delete" %}
                                       <li>
-                                          <a name="deleteProductGroup" href="{% url 'delete_product_group' group.id %}">
+                                          <a name="deleteRepoGroup" href="{% url 'delete_product_group' group.id %}">
                                               <i class="fa-solid fa-trash"></i>{% trans "Delete" %}</a>
                                       </li>
                                       {% endif %}
@@ -430,7 +430,7 @@
                           </ul>
                       </td>
                       <td name="group_name">{{ group.group.name }}</td>
-                      <td name="group_source">{% trans "Product Group" %}</td>
+                      <td name="group_source">{% trans "Repo Group" %}</td>
                       <td name="group_role">{{ group.role }}</td>
                   </tr>
                   {% endfor %}
@@ -479,8 +479,8 @@
             <td>{{ prod.get_business_criticality_display|notspecified }}</td>
           </tr>
           <tr>
-            <td><strong>{% trans "Product Type" %}</strong></td>
-            <td><a title="{% trans "Product Type" %}" href="{% url 'view_product_type' prod.prod_type.id %}">{{ prod.prod_type }}</a></td>
+            <td><strong>{% trans "Tribe" %}</strong></td>
+            <td><a title="{% trans "Tribe" %}" href="{% url 'view_product_type' prod.prod_type.id %}">{{ prod.prod_type }}</a></td>
           </tr>
           <tr>
             <td><strong>{% trans "Platform" %}</strong></td>
@@ -645,7 +645,7 @@
             <td>{% if prod.team_manager != "0" %}{{ prod.team_manager | default:"Unknown" }}{% endif %}</td>
           </tr>
           <tr>
-            <td><strong>{% trans "Product Manager" %}</strong></td>
+            <td><strong>{% trans "Repo Manager" %}</strong></td>
             <td>{% if prod.product_manager != "0" %}{{ prod.product_manager | default:"Unknown" }}{% endif %}</td>
           </tr>
           <tr>

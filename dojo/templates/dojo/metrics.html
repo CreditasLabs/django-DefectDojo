@@ -198,10 +198,10 @@
                         </div>
                     {% endfor %}
                 </div>
-            {% elif name == "Critical Product Metrics" %}
+            {% elif name == "Critical Repo Metrics" %}
                 <div class="row">
                     <div class="col-lg-6">
-                        <h3><b>{% trans "No Critical Products registered" %}</b></h3>
+                        <h3><b>{% trans "No Critical Repos registered" %}</b></h3>
                     </div>
                 </div>
             {% endif %}
@@ -288,7 +288,7 @@
                                     {% if top_ten_products %}
                                         <li class="active">
                                             <a data-toggle="tab" href="#tabs-1">
-                                                {% trans "Top 10 Products <br/> by bug severity" %}
+                                                {% trans "Top 10 Repos <br/> by bug severity" %}
                                             </a>
                                         </li>
                                     {% endif %}
@@ -308,7 +308,7 @@
                                             <table
                                                     class="table table-bordered table-condensed table-striped table-400">
                                                 <tr>
-                                                    <th>{% trans "Product" %}</th>
+                                                    <th>{% trans "Repo" %}</th>
                                                     <th>{% trans "Critical" %}</th>
                                                     <th>{% trans "High" %}</th>
                                                     <th>{% trans "Medium" %}</th>
@@ -338,7 +338,7 @@
                                         <table class="table table-bordered table-condensed table-striped table-600">
                                             <tr>
                                                 <th class="nowrap">{% trans "Team" %}</th>
-                                                <th class="">{% trans "Product" %}</th>
+                                                <th class="">{% trans "Repo" %}</th>
                                                 <th>{% trans "Severity" %}</th>
                                                 <th>{% trans "EPSS Score / Percentile" %}</th>
                                                 <th>{% trans "Description" %}</th>
@@ -396,7 +396,7 @@
                                             <table
                                                     class="table table-bordered table-condensed table-striped table-600">
                                                 <tr>
-                                                    <th>{% trans "Product" %}</th>
+                                                    <th>{% trans "Repo" %}</th>
                                                     <th>{% trans "Critical" %}</th>
                                                     <th>{% trans "High" %}</th>
                                                     <th>{% trans "Medium" %}</th>
@@ -447,7 +447,7 @@
                                             <table
                                                     class="table table-bordered table-condensed table-striped table-600">
                                                 <tr>
-                                                    <th>{% trans "Product" %}</th>
+                                                    <th>{% trans "Repo" %}</th>
                                                     <th>{% trans "Critical" %}</th>
                                                     <th>{% trans "High" %}</th>
                                                     <th>{% trans "Medium" %}</th>
@@ -500,7 +500,7 @@
                                             <table
                                                     class="table table-bordered table-condensed table-striped table-600">
                                                 <tr>
-                                                    <th>{% trans "Product" %}</th>
+                                                    <th>{% trans "Repo" %}</th>
                                                     <th>{% trans "Critical" %}</th>
                                                     <th>{% trans "High" %}</th>
                                                     <th>{% trans "Medium" %}</th>

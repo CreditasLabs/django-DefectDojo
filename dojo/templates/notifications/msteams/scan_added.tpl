@@ -13,7 +13,7 @@
             "text": "{% trans "A new scan has been added" %}.",
             "facts": [
                 {
-                    "name": "{% trans "Product" %}:",
+                    "name": "{% trans "Repo" %}:",
                     "value": "{{ test.engagement.product.name }}"
                 },
                 {

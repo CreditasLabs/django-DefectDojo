@@ -162,11 +162,11 @@
                     {% endif %}
                     {% if test.api_scan_configuration %}
                         <td>
-                            {% if prod|has_object_permission:"Product_Edit" %}
+                            {% if prod|has_object_permission:"Repo_Edit" %}
                                 <a href="{% url 'edit_api_scan_configuration' prod.id test.api_scan_configuration.id %}">
                                 {% endif %}
                                 {{ test.api_scan_configuration }}
-                                {% if prod|has_object_permission:"Product_Edit" %}
+                                {% if prod|has_object_permission:"Repo_Edit" %}
                                 </a>
                             {% endif %}
                         </td>

@@ -21,9 +21,9 @@
         <h2>{% blocktrans with start_date=start_date.date end_date=end_date.date%}Finding Information For Period of {{ start_date }} - {{ end_date }}
             {% endblocktrans %}</h2>
         <h3 class="inline-block">{{ pt.name }}</h3>
-        {% if pt|class_name == "Product_Type" %}
+        {% if pt|class_name == "Repo_Type" %}
         [<a href="{% url 'product_type_metrics' pt.id %}" class="inline-block">{% trans "View Details" %}</a>]
-        {% elif pt|class_name == "Tagulous_Product_tags" %}
+        {% elif pt|class_name == "Tagulous_Repo_tags" %}
         [<a href="{% url 'product' %}?tags={{ pt }}" class="inline-block">{% trans "View Details" %}</a>]
         {% endif %}
         <div class="panel panel-default table-responsive">
@@ -197,7 +197,7 @@
             <table class="table table-bordered table-condensed table-striped">
                 <thead>
                 <tr>
-                    <th>{% trans "Product" %}</th>
+                    <th>{% trans "Repo" %}</th>
                     <th>{% trans "Critical" %}</th>
                     <th>{% trans "High" %}</th>
                     <th>{% trans "Medium" %}</th>
@@ -246,7 +246,7 @@
                     <th>{% trans "Severity" %}</th>
                     <th>{% trans "EPSS Score / Percentile" %}</th>
                     <th>{% trans "Age" %}</th>
-                    <th>{% trans "Product" %}</th>
+                    <th>{% trans "Repo" %}</th>
                 </tr>
                 </thead>
                 <tbody>

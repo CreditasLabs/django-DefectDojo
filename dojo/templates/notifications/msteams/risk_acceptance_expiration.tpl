@@ -22,7 +22,7 @@
             {% endif %}
             "facts": [
                 {
-                    "name": "{% trans "Product" %}:",
+                    "name": "{% trans "Repo" %}:",
                     "value": "{{ risk_acceptance.engagement.product.name }}"
                 },
                 {

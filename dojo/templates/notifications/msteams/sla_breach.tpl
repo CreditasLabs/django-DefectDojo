@@ -13,7 +13,7 @@
                 "text": "{% trans "A SLA for a finding has been breached" %}.",
                 "facts": [
                     {
-                        "name": "{% trans "Product" %}:",
+                        "name": "{% trans "Repo" %}:",
                         "value": "{{ finding.test.engagement.product.name }}"
                     },
                     {

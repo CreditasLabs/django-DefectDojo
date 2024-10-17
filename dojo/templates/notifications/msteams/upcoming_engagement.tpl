@@ -13,7 +13,7 @@
             "text": "{% trans "An Engagement is starting" %}.",
             "facts": [
                 {
-                    "name": "{% trans "Product" %}:",
+                    "name": "{% trans "Repo" %}:",
                     "value": "{{ engagement.product.name }}"
                 },
                 {

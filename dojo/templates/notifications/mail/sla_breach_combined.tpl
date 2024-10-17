@@ -6,7 +6,7 @@
         {% autoescape on %}
             <p>{% trans "Hello" %} {{ user.get_full_name }},</p>
             <p>
-                {% trans "Product summary" %}:
+                {% trans "Repo summary" %}:
                 <ul>
                     <li>{% trans "name" %}: {{ product.name }}</li>
                     <li>{% trans "product type" %}: {{ product.prod_type }}</li>

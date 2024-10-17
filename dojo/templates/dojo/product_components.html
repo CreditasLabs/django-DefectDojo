@@ -107,7 +107,7 @@
     // DataTables setup
     $(document).ready(function() {
         date =  new Date().toISOString().slice(0, 10);
-        var fileDated = 'Product_Components_' + date;
+        var fileDated = 'Repo_Components_' + date;
         var buttonCommon = {
             exportOptions: {
                 stripHtml: true,
@@ -116,7 +116,7 @@
                 orthogonal: 'export'
             },
             filename: fileDated,
-            title: 'Product Components'
+            title: 'Repo Components'
         };
 
         // Mapping of table columns to objects for proper cleanup and data formatting
